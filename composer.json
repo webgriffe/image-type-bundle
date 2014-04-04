@@ -1,0 +1,19 @@
+{
+    "name": "webgriffe/image-type-bundle",
+    "description": "Ready-to-use image type bundle for Symfony2.",
+    "require": {
+        "oneup/uploader-bundle": "@stable",
+        "vich/uploader-bundle": "@stable",
+        "symfony/symfony": ">=2.0"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Webgriffe SRL",
+            "email": "info@webgriffe.com"
+        }
+    ],
+    "autoload": {
+        "psr-0": { "Webgriffe\\ImageTypeBundle": "src/" }
+    }
+}

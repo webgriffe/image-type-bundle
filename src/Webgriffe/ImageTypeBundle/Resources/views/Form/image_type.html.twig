@@ -1,0 +1,53 @@
+{% block image_widget %}
+    <div class="image-upload-widget" style="overflow: hidden;">
+        {% set text = 'Choose a picture'|trans %}
+        {% set preview = id ~ '-preview' %}
+        <div id="{{ preview }}" class="upload_image pull-left span2" style="margin-right: 20px; margin-left: 0px;{% if image_url is null %} display: none;{% endif %}">
+            <img src="{% if image_url is null %}//:0{% else %}{{ asset(image_url) }}{% endif %}" alt="{{ 'No image available'|trans }}"/>
+        </div>
+        <div class="span3" style="margin-left: 0px;">
+            <script type="text/javascript">
+                $(document).ready(function() {
+                    $('div#{{ id }}-placeholder').uploadify(
+                        {
+                            swf: "{{ asset('bundles/webgriffebase/uploadify/uploadify.swf') }}",
+                            uploader: "{{ oneup_uploader_endpoint('gallery') }}",
+                            buttonText: "{{ text }}",
+                            multi: false,
+                            width: 220,
+                            height: 41,
+                            buttonClass: 'btn btn-default pagination-left',
+                            fileSizeLimit: '5MB',
+                            {% if uplodify_fileTypeExts is not empty %}
+                            fileTypeExts: {{ uplodify_fileTypeExts|json_encode|raw }},
+                            {% endif %}
+                            onUploadSuccess  : function(file, data, response) {
+                                var responseData = jQuery.parseJSON(data);
+                                {% if preview is defined %}
+                                    $('#{{ preview }}').html("<img src='"+responseData.uploaded_file_path_name+"' />");
+                                    $('#{{ preview }}').show();
+                                    $('#{{ preview }}').trigger('uploadSuccess');
+                                {% endif %}
+                                $('#{{ id }}').attr('value', responseData.uploaded_file_path_name);
+                            }
+                        }
+                    );
+
+                    var iconContainer = $('<div />', {
+                        'class' : 'pull-right'
+                    });
+
+                    var icon = $('<i />', {
+                        'class' : 'fui-upload icon-white pull-right',
+                        'style' : 'margin-top: 15px;'
+                    });
+
+                    $('#{{ id }}-placeholder-button').append($(icon).wrap(iconContainer));
+                });
+            </script>
+            <div id="{{ id }}-placeholder"></div>
+
+            <input type="hidden" {{ block('widget_attributes') }} />
+        </div>
+    </div>
+{% endblock %}
