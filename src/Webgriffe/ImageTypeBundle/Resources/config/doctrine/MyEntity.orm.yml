@@ -1,0 +1,13 @@
+Webgriffe\ImageTypeBundle\Example\Entity\MyEntity:
+    type: entity
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    fields:
+        name:
+            type: string
+            length: 255
+        image_path:
+            type: string
+            length: 255

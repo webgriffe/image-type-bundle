@@ -6,6 +6,13 @@
         "vich/uploader-bundle": "@stable",
         "symfony/symfony": ">=2.0"
     },
+    "require-dev": {
+        "doctrine/orm": "*",
+        "doctrine/doctrine-bundle": "@stable",
+        "symfony/assetic-bundle": "*",
+        "liip/functional-test-bundle": "@stable",
+        "doctrine/doctrine-fixtures-bundle": "@stable"
+    },
     "license": "MIT",
     "authors": [
         {
