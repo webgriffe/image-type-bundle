@@ -1,3 +1,3 @@
 my_form:
     path: /
-    defaults: { _controller: Webgriffe\ImageTypeBundle\Example\Controller\MyFormController::indexAction }
+    defaults: { _controller: Webgriffe\ImageTypeBundle\Tests\Fixtures\Application\Controller\MyFormController::indexAction }

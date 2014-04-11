@@ -3,7 +3,7 @@
  * @author Manuele Menozzi <mmenozzi@webgriffe.com>
  */
 
-namespace Webgriffe\ImageTypeBundle\Example\Entity;
+namespace Webgriffe\ImageTypeBundle\Tests\Fixtures\Application\Entity;
 
 
 use Symfony\Component\HttpFoundation\File\File;

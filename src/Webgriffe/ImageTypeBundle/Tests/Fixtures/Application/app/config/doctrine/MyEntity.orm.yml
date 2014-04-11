@@ -1,4 +1,4 @@
-Webgriffe\ImageTypeBundle\Example\Entity\MyEntity:
+Webgriffe\ImageTypeBundle\Tests\Fixtures\Application\Entity\MyEntity:
     type: entity
     id:
         id:

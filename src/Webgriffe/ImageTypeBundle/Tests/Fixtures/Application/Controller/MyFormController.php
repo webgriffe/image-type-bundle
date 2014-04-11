@@ -3,7 +3,7 @@
  * @author Manuele Menozzi <mmenozzi@webgriffe.com>
  */
 
-namespace Webgriffe\ImageTypeBundle\Example\Controller;
+namespace Webgriffe\ImageTypeBundle\Tests\Fixtures\Application\Controller;
 
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;

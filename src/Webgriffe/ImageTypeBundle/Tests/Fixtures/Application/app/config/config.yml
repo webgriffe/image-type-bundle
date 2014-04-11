@@ -19,11 +19,12 @@ doctrine:
 
     orm:
         auto_generate_proxy_classes: "%kernel.debug%"
-        auto_mapping: true
+        auto_mapping: false
         mappings:
-            WebgriffeImageTypeBundle:
-                prefix: Webgriffe\ImageTypeBundle\Example\Entity
-
+            TestApplication:
+                type: yml
+                prefix: Webgriffe\ImageTypeBundle\Tests\Fixtures\Application\Entity
+                dir: %kernel.root_dir%/config/doctrine
 
 vich_uploader:
     db_driver: orm
