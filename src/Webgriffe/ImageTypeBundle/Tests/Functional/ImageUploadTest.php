@@ -16,7 +16,7 @@ class ImageUploadTest extends WebTestCase
 
         $this->loadFixtures(array());
 
-        $client->request('GET', '/');
-        $this->assertContains('Hello World', $client->getResponse()->getContent());
+        $crawler = $client->request('GET', '/');
+        $this->assertEquals('Hello World!', $crawler->filter('h1')->text());
     }
 } 
