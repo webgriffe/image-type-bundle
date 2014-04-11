@@ -26,5 +26,10 @@ doctrine:
                 prefix: Webgriffe\ImageTypeBundle\Tests\Fixtures\Application\Entity
                 dir: %kernel.root_dir%/config/doctrine
 
+oneup_uploader:
+    mappings:
+        gallery:
+            frontend: uploadify
+
 vich_uploader:
     db_driver: orm

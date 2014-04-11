@@ -25,6 +25,7 @@ class AppKernel extends Kernel
 
             new \Liip\FunctionalTestBundle\LiipFunctionalTestBundle(),
             new \Vich\UploaderBundle\VichUploaderBundle(),
+            new \Oneup\UploaderBundle\OneupUploaderBundle(),
 
             new \Webgriffe\ImageTypeBundle\WebgriffeImageTypeBundle(),
         );
